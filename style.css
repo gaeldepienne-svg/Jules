@@ -1,0 +1,280 @@
+:root {
+    --primary-blue: #0088CC;
+    --secondary-blue: #0077B3;
+    --light-blue-bg: #D8EBF9;
+    --bg-color: #F0F4F8;
+    --card-bg: #FFFFFF;
+    --text-dark: #333333;
+    --text-light: #777777;
+    --price-color: #0088CC;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--bg-color);
+    margin: 0;
+    padding: 0;
+    color: var(--text-dark);
+}
+
+.main-header {
+    background-color: var(--primary-blue);
+    color: white;
+    padding: 20px 20px 30px 20px;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+}
+
+.main-header h1 {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.subtitle {
+    margin: 5px 0 0 0;
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+.container {
+    padding: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+    margin-top: -10px; /* Slight overlap or pull up if needed, but let's stick to simple spacing */
+    margin-top: 10px;
+}
+
+.module {
+    background-color: var(--card-bg);
+    border-radius: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.module-header {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    cursor: pointer;
+}
+
+.date-badge {
+    background-color: var(--light-blue-bg);
+    color: var(--primary-blue);
+    border-radius: 12px;
+    padding: 8px 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    width: 60px;
+    height: 60px;
+    text-align: center;
+}
+
+.day-month {
+    font-weight: 700;
+    font-size: 0.9rem;
+    line-height: 1.2;
+}
+
+.month-name {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.module-info h2 {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.module-info p {
+    margin: 2px 0 0 0;
+    font-size: 0.85rem;
+    color: var(--text-light);
+}
+
+.accordion-icon {
+    margin-left: auto;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: #F5F9FC;
+    color: #88AACC;
+}
+
+.expanded .accordion-icon {
+    background-color: #E1F0F8;
+    color: var(--primary-blue);
+}
+
+.module-content {
+    display: none;
+    padding: 0 20px 20px 20px;
+    border-top: 1px solid #f0f0f0;
+}
+
+.module.expanded .module-content {
+    display: block;
+}
+
+/* Sections inside expanded module */
+.details-section {
+    margin-top: 25px;
+}
+
+.section-title {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.icon-box {
+    background-color: var(--light-blue-bg);
+    color: var(--primary-blue);
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+}
+
+.section-title h3 {
+    margin: 0;
+    font-size: 0.95rem;
+    color: var(--primary-blue);
+    font-weight: 600;
+}
+
+.card-details {
+    margin-left: 10px; /* Slight indent */
+}
+
+.card-details h4 {
+    margin: 0 0 10px 0;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+.address {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    margin-bottom: 15px;
+    line-height: 1.4;
+}
+
+.date-info {
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.date-info i {
+    margin-right: 5px;
+}
+
+.check-times {
+    font-size: 0.75rem;
+    color: var(--text-light);
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.amenities {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+}
+
+.amenities li {
+    font-size: 0.8rem;
+    color: var(--text-dark);
+    margin-bottom: 5px;
+    position: relative;
+    padding-left: 12px;
+}
+
+.amenities li::before {
+    content: "•";
+    color: var(--text-light);
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.price-row {
+    background-color: #F8F9FA;
+    padding: 10px 15px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ref {
+    font-size: 0.8rem;
+    color: var(--text-light);
+}
+
+.price {
+    font-weight: 700;
+    color: var(--price-color);
+    font-size: 0.9rem;
+}
+
+/* Trip Specifics */
+.trip-leg {
+    border-left: 2px solid #E0E0E0;
+    padding-left: 15px;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.trip-leg::before {
+    content: '';
+    position: absolute;
+    left: -2px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background-color: var(--light-blue-bg);
+}
+
+.leg-label {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-light);
+    font-weight: 700;
+    display: block;
+    margin-bottom: 3px;
+}
+
+.leg-time {
+    margin: 0;
+    font-size: 0.85rem;
+    color: var(--text-dark);
+}
+
+@media (min-width: 600px) {
+    .container {
+        padding-top: 40px;
+    }
+}
