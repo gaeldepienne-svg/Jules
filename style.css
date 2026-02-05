@@ -166,16 +166,8 @@ body {
 }
 
 .card-details {
-    margin-left: 10px; /* Slight indent */
     margin-bottom: 25px;
     padding-bottom: 20px;
-    border-bottom: 1px dashed #e0e0e0;
-}
-
-.card-details:last-child {
-    margin-bottom: 0;
-    padding-bottom: 0;
-    border-bottom: none;
 }
 
 .card-details h4 {
@@ -274,6 +266,144 @@ body {
     font-weight: 700;
     color: var(--price-color);
     font-size: 0.9rem;
+}
+
+/* Timeline Styles */
+.timeline {
+    position: relative;
+    padding-left: 5px; /* Small offset */
+}
+
+.timeline-item {
+    display: flex;
+    position: relative;
+    padding-bottom: 30px;
+}
+
+.timeline-item:last-child {
+    padding-bottom: 0;
+}
+
+.timeline-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 15px;
+    width: 20px;
+    flex-shrink: 0;
+    position: relative;
+}
+
+.timeline-marker {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background-color: var(--primary-blue);
+    border: 3px solid #fff;
+    box-shadow: 0 0 0 1px var(--primary-blue);
+    z-index: 2;
+    margin-top: 5px; /* Align with card title approx */
+    flex-shrink: 0;
+}
+
+.timeline-marker.empty {
+    background-color: #999;
+    box-shadow: 0 0 0 1px #999;
+}
+
+.timeline-line {
+    position: absolute;
+    top: 10px; /* Start from center of marker */
+    bottom: -30px; /* Extend to next item */
+    width: 2px;
+    background-color: var(--primary-blue);
+    z-index: 1;
+}
+
+.timeline-item:last-child .timeline-line {
+    display: none;
+}
+
+/* User requirement: "trait plein" (solid line) for empty days. */
+/* We use solid line generally. For empty state specifically: */
+.timeline-item.empty-state .timeline-line.solid {
+    background-color: #555; /* Distinct solid color if needed, or just same */
+    width: 3px; /* Slightly thicker to emphasize "trait plein" */
+}
+
+.timeline-content {
+    flex-grow: 1;
+    min-width: 0; /* Fix flex overflow */
+}
+
+/* Card with Thumb */
+.card-details.has-thumb {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.thumb-container {
+    flex-shrink: 0;
+    width: 70px;
+}
+
+.hotel-thumb {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.empty-thumb {
+    width: 70px;
+    height: 70px;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #bbb;
+    font-size: 1.5rem;
+    border: 1px dashed #ccc;
+}
+
+.details-body {
+    flex-grow: 1;
+}
+
+.details-body h4 {
+    margin-top: 0;
+}
+
+/* Adjust Empty Card Text */
+.card-details.empty-card h4 {
+    color: #777;
+    font-weight: 600;
+}
+
+.card-details.empty-card .address {
+    font-style: italic;
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 400px) {
+    .card-details.has-thumb {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .thumb-container, .hotel-thumb, .empty-thumb {
+        width: 100%;
+        height: 120px;
+    }
+
+    .timeline-left {
+        margin-right: 10px;
+    }
 }
 
 /* Trip Specifics */
