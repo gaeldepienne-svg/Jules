@@ -268,6 +268,39 @@ body {
     font-size: 0.9rem;
 }
 
+.platform-info {
+    font-size: 0.75rem;
+    color: var(--text-light);
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.platform-tag {
+    background-color: #f0f0f0;
+    border-radius: 4px;
+    padding: 2px 6px;
+    font-weight: 500;
+    color: #555;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.deadline-info {
+    font-size: 0.75rem;
+    color: var(--warning-orange);
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.deadline-info i {
+    font-size: 0.8rem;
+}
+
 /* Timeline Styles */
 .timeline {
     position: relative;
