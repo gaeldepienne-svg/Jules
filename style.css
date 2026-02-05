@@ -7,6 +7,10 @@
     --text-dark: #333333;
     --text-light: #777777;
     --price-color: #0088CC;
+    --success-green: #28a745;
+    --success-bg: #d4edda;
+    --warning-orange: #fd7e14;
+    --warning-bg: #ffeeba;
 }
 
 * {
@@ -240,6 +244,30 @@ body {
 .ref {
     font-size: 0.8rem;
     color: var(--text-light);
+}
+
+.price-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.status-badge {
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 4px 8px;
+    border-radius: 6px;
+    text-transform: uppercase;
+}
+
+.status-badge.paid {
+    background-color: var(--success-bg);
+    color: var(--success-green);
+}
+
+.status-badge.pending {
+    background-color: var(--warning-bg);
+    color: var(--warning-orange);
 }
 
 .price {
