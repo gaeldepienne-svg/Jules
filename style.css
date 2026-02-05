@@ -163,6 +163,15 @@ body {
 
 .card-details {
     margin-left: 10px; /* Slight indent */
+    margin-bottom: 25px;
+    padding-bottom: 20px;
+    border-bottom: 1px dashed #e0e0e0;
+}
+
+.card-details:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
 }
 
 .card-details h4 {
