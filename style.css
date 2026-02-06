@@ -1,20 +1,26 @@
 :root {
-    --primary-blue: #0088CC;
-    --secondary-blue: #0077B3;
-    --light-blue-bg: #D8EBF9;
-    --bg-color: #F0F4F8;
+    --primary-color: #0088CC;
+    --primary-dark: #006699;
+    --accent-color: #FF9900;
+    --bg-color: #F0F2F5;
     --card-bg: #FFFFFF;
-    --text-dark: #333333;
-    --text-light: #777777;
-    --price-color: #0088CC;
-    --success-green: #28a745;
-    --success-bg: #d4edda;
-    --warning-orange: #fd7e14;
-    --warning-bg: #ffeeba;
+    --text-primary: #1A1A1A;
+    --text-secondary: #666666;
+    --success-color: #2ECC71;
+    --warning-color: #F39C12;
+    --danger-color: #E74C3C;
+    --shadow-soft: 0 10px 30px -5px rgba(0, 0, 0, 0.08);
+    --shadow-hover: 0 15px 35px -5px rgba(0, 0, 0, 0.12);
+    --radius-lg: 20px;
+    --radius-md: 12px;
+    --radius-sm: 8px;
+    --gradient-primary: linear-gradient(135deg, #0088CC 0%, #005F8C 100%);
+    --gradient-overlay: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%);
 }
 
 * {
     box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
 }
 
 body {
@@ -22,301 +28,190 @@ body {
     background-color: var(--bg-color);
     margin: 0;
     padding: 0;
-    color: var(--text-dark);
+    color: var(--text-primary);
+    line-height: 1.5;
 }
 
+/* Header */
 .main-header {
-    background-color: var(--primary-blue);
+    background: var(--gradient-primary);
     color: white;
-    padding: 20px 20px 30px 20px;
-    border-bottom-left-radius: 25px;
-    border-bottom-right-radius: 25px;
+    padding: 30px 20px 50px 20px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    box-shadow: var(--shadow-soft);
+    position: relative;
+    z-index: 10;
 }
 
 .main-header h1 {
     margin: 0;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     font-weight: 700;
+    letter-spacing: -0.5px;
 }
 
 .subtitle {
     margin: 5px 0 0 0;
-    font-size: 0.9rem;
+    font-size: 1rem;
     opacity: 0.9;
+    font-weight: 400;
 }
 
 .container {
     padding: 20px;
     max-width: 600px;
     margin: 0 auto;
-    margin-top: -10px; /* Slight overlap or pull up if needed, but let's stick to simple spacing */
-    margin-top: 10px;
+    margin-top: -30px;
+    position: relative;
+    z-index: 20;
 }
 
+/* Modules */
 .module {
     background-color: var(--card-bg);
-    border-radius: 15px;
-    margin-bottom: 15px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    border-radius: var(--radius-lg);
+    margin-bottom: 20px;
+    box-shadow: var(--shadow-soft);
     overflow: hidden;
-    transition: all 0.3s ease;
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s ease;
+    border: 1px solid rgba(0,0,0,0.02);
+}
+
+.module:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-hover);
 }
 
 .module-header {
     display: flex;
     align-items: center;
-    padding: 15px;
+    padding: 20px;
     cursor: pointer;
+    background: #fff;
+    user-select: none;
 }
 
 .date-badge {
-    background-color: var(--light-blue-bg);
-    color: var(--primary-blue);
-    border-radius: 12px;
-    padding: 8px 5px;
+    background: #E6F3FA;
+    color: var(--primary-color);
+    border-radius: var(--radius-md);
+    padding: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-right: 15px;
-    width: 60px;
-    height: 60px;
+    margin-right: 20px;
+    width: 65px;
+    height: 65px;
     text-align: center;
+    box-shadow: inset 0 0 0 1px rgba(0,136,204,0.1);
 }
 
 .day-month {
-    font-weight: 700;
-    font-size: 0.9rem;
-    line-height: 1.2;
+    font-weight: 800;
+    font-size: 1.1rem;
+    line-height: 1;
+    margin-bottom: 2px;
 }
 
 .month-name {
-    font-size: 0.7rem;
+    font-size: 0.75rem;
     text-transform: uppercase;
     font-weight: 700;
+    letter-spacing: 0.5px;
 }
 
 .module-info h2 {
     margin: 0;
-    font-size: 1rem;
+    font-size: 1.1rem;
     font-weight: 700;
+    color: var(--text-primary);
 }
 
 .module-info p {
-    margin: 2px 0 0 0;
-    font-size: 0.85rem;
-    color: var(--text-light);
+    margin: 4px 0 0 0;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
 }
 
 .accordion-icon {
     margin-left: auto;
-    width: 30px;
-    height: 30px;
+    width: 36px;
+    height: 36px;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 50%;
-    background-color: #F5F9FC;
-    color: #88AACC;
+    background-color: #F5F7FA;
+    color: #A0AEC0;
+    transition: all 0.3s ease;
 }
 
-.expanded .accordion-icon {
-    background-color: #E1F0F8;
-    color: var(--primary-blue);
+.module.expanded .accordion-icon {
+    background-color: var(--primary-color);
+    color: white;
+    transform: rotate(180deg); /* Visual effect */
 }
 
 .module-content {
     display: none;
-    padding: 0 20px 20px 20px;
-    border-top: 1px solid #f0f0f0;
+    padding: 0 20px 30px 20px;
+    border-top: 1px solid #F0F2F5;
+    animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 .module.expanded .module-content {
     display: block;
 }
 
-/* Sections inside expanded module */
+/* Sections */
 .details-section {
-    margin-top: 25px;
+    margin-top: 30px;
 }
 
 .section-title {
     display: flex;
     align-items: center;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
 .icon-box {
-    background-color: var(--light-blue-bg);
-    color: var(--primary-blue);
-    width: 32px;
-    height: 32px;
-    border-radius: 8px;
+    background: linear-gradient(135deg, #E6F3FA 0%, #D0E9F7 100%);
+    color: var(--primary-color);
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-right: 10px;
+    margin-right: 12px;
+    box-shadow: 0 2px 5px rgba(0,136,204,0.1);
 }
 
 .section-title h3 {
     margin: 0;
-    font-size: 0.95rem;
-    color: var(--primary-blue);
-    font-weight: 600;
-}
-
-.card-details {
-    margin-bottom: 25px;
-    padding-bottom: 20px;
-}
-
-.card-details h4 {
-    margin: 0 0 10px 0;
-    font-size: 0.9rem;
+    font-size: 1rem;
+    color: var(--primary-dark);
     font-weight: 700;
-    color: var(--text-dark);
+    letter-spacing: 0.3px;
 }
 
-.address {
-    font-size: 0.85rem;
-    color: var(--text-light);
-    margin-bottom: 15px;
-    line-height: 1.4;
-}
-
-.date-info {
-    font-size: 0.85rem;
-    font-weight: 600;
-    margin-bottom: 5px;
-    color: #555;
-}
-
-.date-info i {
-    margin-right: 5px;
-}
-
-.check-times {
-    font-size: 0.75rem;
-    color: var(--text-light);
-    margin-top: 0;
-    margin-bottom: 15px;
-}
-
-.amenities {
-    list-style: none;
-    padding: 0;
-    margin: 0 0 20px 0;
-}
-
-.amenities li {
-    font-size: 0.8rem;
-    color: var(--text-dark);
-    margin-bottom: 5px;
-    position: relative;
-    padding-left: 12px;
-}
-
-.amenities li::before {
-    content: "•";
-    color: var(--text-light);
-    position: absolute;
-    left: 0;
-    top: 0;
-}
-
-.price-row {
-    background-color: #F8F9FA;
-    padding: 10px 15px;
-    border-radius: 8px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.ref {
-    font-size: 0.8rem;
-    color: var(--text-light);
-}
-
-.price-info {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.status-badge {
-    font-size: 0.7rem;
-    font-weight: 700;
-    padding: 4px 8px;
-    border-radius: 6px;
-    text-transform: uppercase;
-}
-
-.status-badge.paid {
-    background-color: var(--success-bg);
-    color: var(--success-green);
-}
-
-.status-badge.pending {
-    background-color: var(--warning-bg);
-    color: var(--warning-orange);
-}
-
-.price {
-    font-weight: 700;
-    color: var(--price-color);
-    font-size: 0.9rem;
-}
-
-.platform-info {
-    font-size: 0.75rem;
-    color: var(--text-light);
-    margin-top: 5px;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-}
-
-.platform-tag {
-    background-color: #6f42c1; /* Purple like Vio */
-    color: white;
-    border-radius: 12px;
-    padding: 4px 10px;
-    font-weight: 700;
-    font-size: 0.7rem;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    display: inline-block;
-}
-
-.deadline-info {
-    font-size: 0.8rem;
-    color: #856404;
-    background-color: #fff3cd;
-    border: 1px solid #ffeeba;
-    padding: 10px 12px;
-    border-radius: 8px;
-    margin-top: 10px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    line-height: 1.4;
-}
-
-.deadline-info i {
-    font-size: 0.8rem;
-}
-
-/* Timeline Styles */
+/* Timeline */
 .timeline {
     position: relative;
-    padding-left: 5px; /* Small offset */
+    padding-left: 10px;
 }
 
 .timeline-item {
     display: flex;
     position: relative;
-    padding-bottom: 30px;
+    padding-bottom: 40px;
 }
 
 .timeline-item:last-child {
@@ -327,35 +222,39 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-right: 15px;
-    width: 20px;
+    margin-right: 20px;
+    width: 24px;
     flex-shrink: 0;
     position: relative;
 }
 
 .timeline-marker {
-    width: 14px;
-    height: 14px;
+    width: 16px;
+    height: 16px;
     border-radius: 50%;
-    background-color: var(--primary-blue);
+    background-color: var(--primary-color);
     border: 3px solid #fff;
-    box-shadow: 0 0 0 1px var(--primary-blue);
+    box-shadow: 0 0 0 2px var(--primary-color);
     z-index: 2;
-    margin-top: 5px; /* Align with card title approx */
-    flex-shrink: 0;
+    margin-top: 15px; /* Align with card content approx */
+    transition: transform 0.3s ease;
+}
+
+.timeline-item:hover .timeline-marker {
+    transform: scale(1.2);
 }
 
 .timeline-marker.empty {
-    background-color: #999;
-    box-shadow: 0 0 0 1px #999;
+    background-color: #CBD5E0;
+    box-shadow: 0 0 0 2px #CBD5E0;
 }
 
 .timeline-line {
     position: absolute;
-    top: 10px; /* Start from center of marker */
-    bottom: -30px; /* Extend to next item */
+    top: 20px;
+    bottom: -40px;
     width: 2px;
-    background-color: var(--primary-blue);
+    background-color: #E2E8F0;
     z-index: 1;
 }
 
@@ -363,124 +262,357 @@ body {
     display: none;
 }
 
-/* User requirement: "trait plein" (solid line) for empty days. */
-/* We use solid line generally. For empty state specifically: */
-.timeline-item.empty-state .timeline-line.solid {
-    background-color: #555; /* Distinct solid color if needed, or just same */
-    width: 3px; /* Slightly thicker to emphasize "trait plein" */
-}
-
 .timeline-content {
     flex-grow: 1;
-    min-width: 0; /* Fix flex overflow */
+    min-width: 0;
 }
 
-/* Card with Thumb */
-.card-details.has-thumb {
-    display: flex;
-    gap: 15px;
-    margin-bottom: 0;
-    padding-bottom: 0;
-    border-bottom: none;
+/* Modern Card Styles */
+.card-details.modern-card {
+    background: #fff;
+    border-radius: var(--radius-lg);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    overflow: hidden;
+    border: 1px solid rgba(0,0,0,0.03);
 }
 
-.thumb-container {
-    flex-shrink: 0;
-    width: 70px;
+.card-image-header {
+    position: relative;
+    height: 180px;
+    width: 100%;
 }
 
-.hotel-thumb {
-    width: 70px;
-    height: 70px;
+.card-cover-img {
+    width: 100%;
+    height: 100%;
     object-fit: cover;
-    border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    display: block;
 }
 
-.empty-thumb {
-    width: 70px;
-    height: 70px;
-    background-color: #f0f0f0;
-    border-radius: 10px;
+.card-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 60px 20px 15px 20px;
+    background: var(--gradient-overlay);
     display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #bbb;
-    font-size: 1.5rem;
-    border: 1px dashed #ccc;
+    align-items: flex-end;
+}
+
+.card-overlay h4 {
+    color: white;
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    line-height: 1.3;
 }
 
 .details-body {
-    flex-grow: 1;
+    padding: 20px;
 }
 
-.details-body h4 {
-    margin-top: 0;
+.address {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin: 0 0 15px 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
 }
 
-/* Adjust Empty Card Text */
-.card-details.empty-card h4 {
-    color: #777;
+.address i {
+    color: var(--primary-color);
+    margin-top: 3px;
+}
+
+.date-info {
+    background: #F8FAFC;
+    padding: 10px 12px;
+    border-radius: var(--radius-sm);
     font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+    display: inline-block;
+    font-size: 0.9rem;
 }
 
-.card-details.empty-card .address {
-    font-style: italic;
+.check-times {
+    font-size: 0.8rem;
+    color: #718096;
+    margin: 0 0 15px 0;
+    padding-left: 5px;
 }
 
-/* Mobile responsive adjustments */
-@media (max-width: 400px) {
-    .card-details.has-thumb {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .thumb-container, .hotel-thumb, .empty-thumb {
-        width: 100%;
-        height: 120px;
-    }
-
-    .timeline-left {
-        margin-right: 10px;
-    }
+.amenities {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
 }
 
-/* Trip Specifics */
-.trip-leg {
-    border-left: 2px solid #E0E0E0;
-    padding-left: 15px;
-    margin-bottom: 15px;
+.amenities li {
+    font-size: 0.75rem;
+    background: #F0F4F8;
+    color: var(--text-secondary);
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-weight: 500;
+}
+
+/* Ticket Card Styles */
+.card-details.ticket-card {
+    background: #fff;
+    border-radius: var(--radius-lg);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    overflow: hidden;
+    border: 1px solid rgba(0,0,0,0.03);
     position: relative;
 }
 
-.trip-leg::before {
+/* Visual punch-out effect using pseudo elements if wanted, but clean is better */
+.ticket-header {
+    background: var(--primary-color);
+    padding: 20px;
+    color: white;
+    position: relative;
+}
+
+.ticket-header::after {
     content: '';
     position: absolute;
-    left: -2px;
-    top: 0;
-    bottom: 0;
-    width: 2px;
-    background-color: var(--light-blue-bg);
+    bottom: -6px;
+    left: 0;
+    right: 0;
+    height: 12px;
+    background-image: radial-gradient(circle, transparent 6px, white 6px);
+    background-size: 20px 20px;
+    background-position: center bottom;
+}
+
+.route-display {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.route-display .city {
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.route-line {
+    flex-grow: 1;
+    margin: 0 15px;
+    height: 2px;
+    background: rgba(255,255,255,0.4);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.route-line i {
+    background: var(--primary-color);
+    padding: 0 10px;
+    font-size: 1.2rem;
+}
+
+.ticket-body {
+    padding: 30px 20px 20px 20px;
+}
+
+.trip-leg {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.leg-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #F0F4F8;
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    flex-shrink: 0;
+}
+
+.leg-info {
+    flex-grow: 1;
 }
 
 .leg-label {
-    font-size: 0.65rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    color: var(--text-light);
-    font-weight: 700;
     display: block;
-    margin-bottom: 3px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    margin-bottom: 2px;
 }
 
 .leg-time {
     margin: 0;
-    font-size: 0.85rem;
-    color: var(--text-dark);
+    font-weight: 600;
+    color: var(--text-primary);
+    font-size: 1rem;
 }
 
-@media (min-width: 600px) {
+/* Price Row & Badges */
+.price-row {
+    background-color: #F8FAFC;
+    padding: 15px;
+    border-radius: var(--radius-md);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px dashed #E2E8F0;
+}
+
+.ref {
+    font-size: 0.75rem;
+    color: #A0AEC0;
+    font-family: monospace;
+}
+
+.price-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.status-badge {
+    font-size: 0.7rem;
+    font-weight: 800;
+    padding: 5px 10px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.status-badge.paid {
+    background-color: #DEF7EC;
+    color: var(--success-color);
+}
+
+.status-badge.pending {
+    background-color: #FEF3C7;
+    color: var(--warning-color);
+}
+
+.price {
+    font-weight: 800;
+    color: var(--primary-dark);
+    font-size: 1.1rem;
+}
+
+.platform-info {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.platform-tag {
+    background-color: #6F42C1;
+    color: white;
+    border-radius: 12px;
+    padding: 3px 10px;
+    font-weight: 700;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+}
+
+.deadline-info {
+    font-size: 0.85rem;
+    color: #92400E;
+    background-color: #FEF3C7;
+    border-left: 4px solid #F59E0B;
+    padding: 12px;
+    border-radius: 4px; /* Slightly different to stand out */
+    margin-top: 15px;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    line-height: 1.4;
+}
+
+/* Empty States */
+.card-details.empty-card {
+    background: transparent;
+    border: 2px dashed #CBD5E0;
+    border-radius: var(--radius-lg);
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    opacity: 0.7;
+}
+
+.empty-icon {
+    width: 60px;
+    height: 60px;
+    background: #EDF2F7;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #A0AEC0;
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.card-details.empty-card h4 {
+    margin: 0 0 5px 0;
+    color: var(--text-secondary);
+    font-weight: 600;
+}
+
+.card-details.empty-card .address {
+    margin: 0;
+    font-size: 0.85rem;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
     .container {
-        padding-top: 40px;
+        padding: 15px;
+        margin-top: -20px;
+    }
+
+    .card-image-header {
+        height: 150px;
+    }
+
+    .card-overlay {
+        padding: 40px 15px 15px 15px;
+    }
+
+    .card-overlay h4 {
+        font-size: 1.1rem;
+    }
+
+    .module-header {
+        padding: 15px;
+    }
+
+    .date-badge {
+        width: 55px;
+        height: 55px;
+        margin-right: 15px;
+    }
+
+    .day-month {
+        font-size: 1rem;
     }
 }

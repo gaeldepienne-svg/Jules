@@ -1,4 +1,4 @@
-const CACHE_NAME = 'sessions-v1';
+const CACHE_NAME = 'sessions-v2';
 const urlsToCache = [
   './',
   './index.html',

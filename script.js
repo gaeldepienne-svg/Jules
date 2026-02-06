@@ -10,21 +10,11 @@ document.addEventListener('DOMContentLoaded', () => {
             // Close all modules
             document.querySelectorAll('.module').forEach(m => {
                 m.classList.remove('expanded');
-                const icon = m.querySelector('.accordion-icon i');
-                if (icon) {
-                    icon.classList.remove('fa-chevron-up');
-                    icon.classList.add('fa-chevron-down');
-                }
             });
 
             // If it wasn't open, open it now
             if (!isOpen) {
                 module.classList.add('expanded');
-                const icon = module.querySelector('.accordion-icon i');
-                if (icon) {
-                    icon.classList.remove('fa-chevron-down');
-                    icon.classList.add('fa-chevron-up');
-                }
             }
         });
     });
