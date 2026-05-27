@@ -3,612 +3,99 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mes sessions de formation</title>
+    <title>Suivi Investissements</title>
     <link rel="stylesheet" href="style.css">
     <link rel="manifest" href="manifest.json">
-    <meta name="theme-color" content="#0088CC">
+    <meta name="theme-color" content="#2c3e50">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Font for better typography -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header class="main-header">
-        <h1>Mes sessions de formation</h1>
-        <p class="subtitle">Rennes</p>
+        <h1>Suivi Investissements</h1>
     </header>
 
     <main class="container">
-        <!-- Module 1: Expanded -->
-        <article class="module expanded">
-            <div class="module-header">
-                <div class="date-badge">
-                    <span class="day-month">09-13</span>
-                    <span class="month-name">MARS</span>
-                </div>
-                <div class="module-info">
-                    <h2>Module 1</h2>
-                    <p>Rennes</p>
-                </div>
-                <div class="accordion-icon">
-                    <i class="fas fa-chevron-up"></i>
-                </div>
-            </div>
-
-            <div class="module-content">
-                <!-- Hébergement -->
-                <section class="details-section">
-                    <div class="section-title">
-                        <div class="icon-box"><i class="fas fa-hotel"></i></div>
-                        <h3>Hébergement</h3>
+        <!-- Section Synthèse -->
+        <section class="summary-section">
+            <div class="card summary-card">
+                <h2>Synthèse Globale</h2>
+                <div class="summary-grid">
+                    <div class="summary-item">
+                        <span class="label">Total Investi</span>
+                        <span class="value" id="total-invested">0,00 €</span>
                     </div>
-
-                    <div class="timeline">
-                        <!-- Hotel 1 -->
-                        <div class="timeline-item">
-                            <div class="timeline-left">
-                                <div class="timeline-line"></div>
-                                <div class="timeline-marker"></div>
-                            </div>
-                            <div class="timeline-content">
-                                <div class="card-details has-thumb">
-                                    <div class="thumb-container">
-                                        <img src="https://images.bestwestern.com/bwi/brochures/93971/photos/1024/26041023.jpg" alt="Le Sévigné" class="hotel-thumb">
-                                    </div>
-                                    <div class="details-body">
-                                        <h4>Le Sévigné</h4>
-                                        <p class="address">47bis Av. Jean Janvier, 35000, Rennes</p>
-
-                                        <div class="date-info">
-                                            <i class="far fa-calendar-alt"></i> 9 Mars - 10 Mars 2026
-                                        </div>
-                                        <p class="check-times">Check-in: après 15h | Check-out: avant 12h</p>
-
-                                        <ul class="amenities">
-                                            <li>Chambre double classique</li>
-                                            <li>1 lit double</li>
-                                            <li>Pas de repas inclus</li>
-                                        </ul>
-
-                                        <div class="price-row">
-                                            <span class="ref">Réf: 572403654</span>
-                                            <div class="price-info">
-                                                <span class="status-badge paid">Payé</span>
-                                                <span class="price">52,50 €</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Hotel 2 -->
-                        <div class="timeline-item">
-                            <div class="timeline-left">
-                                <div class="timeline-line"></div>
-                                <div class="timeline-marker"></div>
-                            </div>
-                            <div class="timeline-content">
-                                <div class="card-details has-thumb">
-                                    <div class="thumb-container">
-                                        <img src="https://images.bestwestern.com/bwi/brochures/93799/photos/1024/17214791.jpg" alt="Best Western" class="hotel-thumb">
-                                    </div>
-                                    <div class="details-body">
-                                        <h4>Best Western Plus Hôtel Isidore</h4>
-                                        <p class="address">1, Rue Nicéphore Niépce, 35136, Rennes-St Jacques de la Lande</p>
-
-                                        <div class="date-info">
-                                            <i class="far fa-calendar-alt"></i> 10 Mars - 12 Mars 2026
-                                        </div>
-                                        <p class="check-times">Check-in: 14h-21h | Check-out: 08h-12h</p>
-
-                                        <ul class="amenities">
-                                            <li>Chambre: 1 (2 Adultes)</li>
-                                            <li>Petit-déjeuner inclus</li>
-                                            <li>Parking intérieur privé</li>
-                                            <li>Accès à l'espace détente</li>
-                                        </ul>
-
-                                        <div class="price-row">
-                                            <span class="ref">Réf: 37160845</span>
-                                            <div class="price-info">
-                                                <span class="status-badge pending">À payer</span>
-                                                <span class="price">239,00 €</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Hotel 3 -->
-                        <div class="timeline-item">
-                            <div class="timeline-left">
-                                <div class="timeline-line solid"></div>
-                                <div class="timeline-marker"></div>
-                            </div>
-                            <div class="timeline-content">
-                                <div class="card-details has-thumb">
-                                    <div class="thumb-container">
-                                        <img src="https://images.bestwestern.com/bwi/brochures/95018/photos/1024/15674902.jpg" alt="Saint Antoine" class="hotel-thumb">
-                                    </div>
-                                    <div class="details-body">
-                                        <h4>BW Premier Collection Le Saint Antoine</h4>
-                                        <p class="address">27 avenue Jean Janvier, Rennes</p>
-
-                                        <div class="date-info">
-                                            <i class="far fa-calendar-alt"></i> 12 Mars - 13 Mars 2026
-                                        </div>
-                                        <p class="check-times">Arrivée: 14h | Départ: 12h</p>
-
-                                        <ul class="amenities">
-                                            <li>Chambre Supérieure</li>
-                                            <li>1 grand lit</li>
-                                            <li>Non-fumeurs</li>
-                                        </ul>
-
-                                        <div class="price-row">
-                                            <span class="ref">Réf: 8929359712</span>
-                                            <div class="price-info">
-                                                <span class="status-badge pending">À payer</span>
-                                                <span class="price">116,24 €</span>
-                                            </div>
-                                        </div>
-                                        <div class="platform-info">
-                                            Réservé via <span class="platform-tag">Vio</span>
-                                        </div>
-                                        <div class="deadline-info">
-                                            <i class="fas fa-clock"></i> Prix garanti jusqu'au 21 févr. 2026
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="summary-item">
+                        <span class="label">Valorisation Actuelle</span>
+                        <span class="value" id="current-valuation">0,00 €</span>
                     </div>
-                </section>
-
-                <!-- Votre voyage -->
-                <section class="details-section">
-                    <div class="section-title">
-                        <div class="icon-box"><i class="fas fa-train"></i></div>
-                        <h3>Votre voyage</h3>
+                    <div class="summary-item highlight">
+                        <span class="label">Plus/Moins-value</span>
+                        <span class="value" id="total-profit-loss">0,00 €</span>
+                        <span class="percent" id="total-profit-loss-percent">(0.00%)</span>
                     </div>
-
-                    <div class="card-details">
-                        <h4>Paris Montparnasse 1 Et 2 vers Rennes</h4>
-
-                        <div class="trip-leg">
-                            <span class="leg-label">ALLER</span>
-                            <p class="leg-time">lundi 9 mars 2026 à 09:54</p>
-                        </div>
-
-                        <div class="trip-leg">
-                            <span class="leg-label">RETOUR</span>
-                            <p class="leg-time">vendredi 13 mars 2026 à 13:35</p>
-                        </div>
-
-                        <div class="price-row">
-                            <span class="ref">Réf: LKB9AM</span>
-                            <div class="price-info">
-                                <span class="status-badge paid">Payé</span>
-                                <span class="price">112,00 €</span>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <section class="details-section">
-                    <div class="section-title">
-                        <div class="icon-box"><i class="fas fa-train"></i></div>
-                        <h3>Votre voyage</h3>
-                    </div>
-                    <div class="timeline">
-                        <div class="timeline-item empty-state">
-                            <div class="timeline-left">
-                                <div class="timeline-line solid"></div>
-                                <div class="timeline-marker empty"></div>
-                            </div>
-                            <div class="timeline-content">
-                                <div class="card-details has-thumb empty-card">
-                                    <div class="thumb-container empty-thumb">
-                                        <i class="fas fa-train"></i>
-                                    </div>
-                                    <div class="details-body">
-                                        <h4>Pas de voyage réservé</h4>
-                                        <div class="date-info">
-                                            <i class="far fa-calendar-alt"></i> 18 Mai - 22 Mai 2026
-                                        </div>
-                                        <p class="address">Aucun billet de train enregistré.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-            </div>
-        </article>
-
-        <!-- Module 2 -->
-        <article class="module">
-            <div class="module-header">
-                <div class="date-badge">
-                    <span class="day-month">18-22</span>
-                    <span class="month-name">MAI</span>
-                </div>
-                <div class="module-info">
-                    <h2>Module 2</h2>
-                    <p>Rennes</p>
-                </div>
-                <div class="accordion-icon">
-                    <i class="fas fa-chevron-down"></i>
                 </div>
             </div>
+        </section>
 
-            <div class="module-content">
-                <section class="details-section">
-                    <div class="section-title">
-                        <div class="icon-box"><i class="fas fa-hotel"></i></div>
-                        <h3>Hébergement</h3>
+        <!-- Section Formulaire -->
+        <section class="add-section">
+            <div class="card">
+                <h2><i class="fas fa-plus-circle"></i> Ajouter un mois</h2>
+                <form id="add-month-form">
+                    <div class="form-group">
+                        <label for="month-year">Mois et Année</label>
+                        <input type="month" id="month-year" required>
                     </div>
-                    <div class="timeline">
-                        <div class="timeline-item empty-state">
-                            <div class="timeline-left">
-                                <div class="timeline-line solid"></div>
-                                <div class="timeline-marker empty"></div>
-                            </div>
-                            <div class="timeline-content">
-                                <div class="card-details has-thumb empty-card">
-                                    <div class="thumb-container empty-thumb">
-                                        <i class="fas fa-bed"></i>
-                                    </div>
-                                    <div class="details-body">
-                                        <h4>Pas d'hébergement réservé</h4>
-                                        <div class="date-info">
-                                            <i class="far fa-calendar-alt"></i> 18 Mai - 22 Mai 2026
-                                        </div>
-                                        <p class="address">Aucune réservation pour cette session.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="form-group">
+                        <label for="monthly-investment">Montant investi ce mois (€)</label>
+                        <input type="number" id="monthly-investment" step="0.01" min="0" required>
                     </div>
-                </section>
+                    <div class="form-group">
+                        <label for="end-valuation">Valorisation totale fin de mois (€)</label>
+                        <input type="number" id="end-valuation" step="0.01" min="0" required>
+                    </div>
+                    <button type="submit" class="btn-primary">Enregistrer</button>
+                </form>
             </div>
-        </article>
+        </section>
 
-        <!-- Module 3 -->
-        <article class="module">
-            <div class="module-header">
-                <div class="date-badge">
-                    <span class="day-month">15-19</span>
-                    <span class="month-name">JUIN</span>
-                </div>
-                <div class="module-info">
-                    <h2>Module 3</h2>
-                    <p>Rennes</p>
-                </div>
-                <div class="accordion-icon">
-                    <i class="fas fa-chevron-down"></i>
-                </div>
-            </div>
-
-            <div class="module-content">
-                <!-- Hébergement -->
-                <section class="details-section">
-                    <div class="section-title">
-                        <div class="icon-box"><i class="fas fa-hotel"></i></div>
-                        <h3>Hébergement</h3>
-                    </div>
-
-                    <div class="timeline">
-                        <!-- Hotel Kyriad -->
-                        <div class="timeline-item">
-                            <div class="timeline-left">
-                                <div class="timeline-line solid"></div>
-                                <div class="timeline-marker"></div>
-                            </div>
-                            <div class="timeline-content">
-                                <div class="card-details has-thumb">
-                                    <div class="thumb-container">
-                                        <img src="https://image.kyriad.com/data/4/hotel/7/6/7/6767/6767_outside_view_1.jpg" alt="Kyriad Rennes" class="hotel-thumb">
-                                    </div>
-                                    <div class="details-body">
-                                        <h4>Kyriad Rennes Centre Gare</h4>
-                                        <p class="address">6 Place De La Gare, Rennes, 35000</p>
-
-                                        <div class="date-info">
-                                            <i class="far fa-calendar-alt"></i> 15 Juin - 19 Juin 2026
-                                        </div>
-                                        <p class="check-times">Check-in: 14h30 - 00h00 | Check-out: avant 12h</p>
-
-                                        <ul class="amenities">
-                                            <li>Standard Room, 1 Double Bed</li>
-                                            <li>1 Adulte</li>
-                                            <li>Free WiFi</li>
-                                        </ul>
-
-                                        <div class="price-row">
-                                            <span class="ref">Booking ID: 9019224702516</span>
-                                            <div class="price-info">
-                                                <span class="status-badge pending">À payer</span>
-                                                <span class="price">472.32 €</span>
-                                            </div>
-                                        </div>
-                                        <div class="platform-info">
-                                            Réservé via <span class="platform-tag">Revolut</span>
-                                        </div>
-                                        <div class="deadline-info">
-                                            <i class="fas fa-exclamation-circle"></i> Payer sur place. Annul. gratuite jusqu'au 26 Mai
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <section class="details-section">
-                    <div class="section-title">
-                        <div class="icon-box"><i class="fas fa-train"></i></div>
-                        <h3>Votre voyage</h3>
-                    </div>
-                    <div class="timeline">
-                        <div class="timeline-item empty-state">
-                            <div class="timeline-left">
-                                <div class="timeline-line solid"></div>
-                                <div class="timeline-marker empty"></div>
-                            </div>
-                            <div class="timeline-content">
-                                <div class="card-details has-thumb empty-card">
-                                    <div class="thumb-container empty-thumb">
-                                        <i class="fas fa-train"></i>
-                                    </div>
-                                    <div class="details-body">
-                                        <h4>Pas de voyage réservé</h4>
-                                        <div class="date-info">
-                                            <i class="far fa-calendar-alt"></i> 15 Juin - 19 Juin 2026
-                                        </div>
-                                        <p class="address">Aucun billet de train enregistré.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-            </div>
-        </article>
-
-        <!-- Module 4 -->
-        <article class="module">
-            <div class="module-header">
-                <div class="date-badge">
-                    <span class="day-month">07-11</span>
-                    <span class="month-name">SEPT</span>
-                </div>
-                <div class="module-info">
-                    <h2>Module 4</h2>
-                    <p>Rennes</p>
-                </div>
-                <div class="accordion-icon">
-                    <i class="fas fa-chevron-down"></i>
+        <!-- Section Historique -->
+        <section class="history-section">
+            <div class="card">
+                <h2><i class="fas fa-history"></i> Historique</h2>
+                <div class="table-responsive">
+                    <table class="history-table">
+                        <thead>
+                            <tr>
+                                <th>Mois</th>
+                                <th>Investissement Mensuel</th>
+                                <th>Cumul Investi</th>
+                                <th>Valorisation</th>
+                                <th>+/- Value Mensuelle</th>
+                                <th>+/- Value Globale</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="history-tbody">
+                            <!-- Rows will be added dynamically -->
+                        </tbody>
+                    </table>
                 </div>
             </div>
-
-            <div class="module-content">
-                <section class="details-section">
-                    <div class="section-title">
-                        <div class="icon-box"><i class="fas fa-hotel"></i></div>
-                        <h3>Hébergement</h3>
-                    </div>
-                    <div class="timeline">
-                        <div class="timeline-item empty-state">
-                            <div class="timeline-left">
-                                <div class="timeline-line solid"></div>
-                                <div class="timeline-marker empty"></div>
-                            </div>
-                            <div class="timeline-content">
-                                <div class="card-details has-thumb empty-card">
-                                    <div class="thumb-container empty-thumb">
-                                        <i class="fas fa-bed"></i>
-                                    </div>
-                                    <div class="details-body">
-                                        <h4>Pas d'hébergement réservé</h4>
-                                        <div class="date-info">
-                                            <i class="far fa-calendar-alt"></i> 7 Sept - 11 Sept 2026
-                                        </div>
-                                        <p class="address">Aucune réservation pour cette session.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <section class="details-section">
-                    <div class="section-title">
-                        <div class="icon-box"><i class="fas fa-train"></i></div>
-                        <h3>Votre voyage</h3>
-                    </div>
-                    <div class="timeline">
-                        <div class="timeline-item empty-state">
-                            <div class="timeline-left">
-                                <div class="timeline-line solid"></div>
-                                <div class="timeline-marker empty"></div>
-                            </div>
-                            <div class="timeline-content">
-                                <div class="card-details has-thumb empty-card">
-                                    <div class="thumb-container empty-thumb">
-                                        <i class="fas fa-train"></i>
-                                    </div>
-                                    <div class="details-body">
-                                        <h4>Pas de voyage réservé</h4>
-                                        <div class="date-info">
-                                            <i class="far fa-calendar-alt"></i> 7 Sept - 11 Sept 2026
-                                        </div>
-                                        <p class="address">Aucun billet de train enregistré.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-            </div>
-        </article>
-
-         <!-- Module 5 -->
-         <article class="module">
-            <div class="module-header">
-                <div class="date-badge">
-                    <span class="day-month">05-09</span>
-                    <span class="month-name">OCT</span>
-                </div>
-                <div class="module-info">
-                    <h2>Module 5</h2>
-                    <p>Rennes</p>
-                </div>
-                <div class="accordion-icon">
-                    <i class="fas fa-chevron-down"></i>
-                </div>
-            </div>
-
-            <div class="module-content">
-                <section class="details-section">
-                    <div class="section-title">
-                        <div class="icon-box"><i class="fas fa-hotel"></i></div>
-                        <h3>Hébergement</h3>
-                    </div>
-                    <div class="timeline">
-                        <div class="timeline-item empty-state">
-                            <div class="timeline-left">
-                                <div class="timeline-line solid"></div>
-                                <div class="timeline-marker empty"></div>
-                            </div>
-                            <div class="timeline-content">
-                                <div class="card-details has-thumb empty-card">
-                                    <div class="thumb-container empty-thumb">
-                                        <i class="fas fa-bed"></i>
-                                    </div>
-                                    <div class="details-body">
-                                        <h4>Pas d'hébergement réservé</h4>
-                                        <div class="date-info">
-                                            <i class="far fa-calendar-alt"></i> 5 Oct - 9 Oct 2026
-                                        </div>
-                                        <p class="address">Aucune réservation pour cette session.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <section class="details-section">
-                    <div class="section-title">
-                        <div class="icon-box"><i class="fas fa-train"></i></div>
-                        <h3>Votre voyage</h3>
-                    </div>
-                    <div class="timeline">
-                        <div class="timeline-item empty-state">
-                            <div class="timeline-left">
-                                <div class="timeline-line solid"></div>
-                                <div class="timeline-marker empty"></div>
-                            </div>
-                            <div class="timeline-content">
-                                <div class="card-details has-thumb empty-card">
-                                    <div class="thumb-container empty-thumb">
-                                        <i class="fas fa-train"></i>
-                                    </div>
-                                    <div class="details-body">
-                                        <h4>Pas de voyage réservé</h4>
-                                        <div class="date-info">
-                                            <i class="far fa-calendar-alt"></i> 5 Oct - 9 Oct 2026
-                                        </div>
-                                        <p class="address">Aucun billet de train enregistré.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-            </div>
-        </article>
-
-         <!-- Module 6 -->
-         <article class="module">
-            <div class="module-header">
-                <div class="date-badge">
-                    <span class="day-month">07-11</span>
-                    <span class="month-name">DÉC</span>
-                </div>
-                <div class="module-info">
-                    <h2>Module 6</h2>
-                    <p>Rennes</p>
-                </div>
-                <div class="accordion-icon">
-                    <i class="fas fa-chevron-down"></i>
-                </div>
-            </div>
-
-            <div class="module-content">
-                <section class="details-section">
-                    <div class="section-title">
-                        <div class="icon-box"><i class="fas fa-hotel"></i></div>
-                        <h3>Hébergement</h3>
-                    </div>
-                    <div class="timeline">
-                        <div class="timeline-item empty-state">
-                            <div class="timeline-left">
-                                <div class="timeline-line solid"></div>
-                                <div class="timeline-marker empty"></div>
-                            </div>
-                            <div class="timeline-content">
-                                <div class="card-details has-thumb empty-card">
-                                    <div class="thumb-container empty-thumb">
-                                        <i class="fas fa-bed"></i>
-                                    </div>
-                                    <div class="details-body">
-                                        <h4>Pas d'hébergement réservé</h4>
-                                        <div class="date-info">
-                                            <i class="far fa-calendar-alt"></i> 7 Déc - 11 Déc 2026
-                                        </div>
-                                        <p class="address">Aucune réservation pour cette session.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <section class="details-section">
-                    <div class="section-title">
-                        <div class="icon-box"><i class="fas fa-train"></i></div>
-                        <h3>Votre voyage</h3>
-                    </div>
-                    <div class="timeline">
-                        <div class="timeline-item empty-state">
-                            <div class="timeline-left">
-                                <div class="timeline-line solid"></div>
-                                <div class="timeline-marker empty"></div>
-                            </div>
-                            <div class="timeline-content">
-                                <div class="card-details has-thumb empty-card">
-                                    <div class="thumb-container empty-thumb">
-                                        <i class="fas fa-train"></i>
-                                    </div>
-                                    <div class="details-body">
-                                        <h4>Pas de voyage réservé</h4>
-                                        <div class="date-info">
-                                            <i class="far fa-calendar-alt"></i> 7 Déc - 11 Déc 2026
-                                        </div>
-                                        <p class="address">Aucun billet de train enregistré.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-            </div>
-        </article>
+        </section>
     </main>
 
     <script src="script.js"></script>
+    <script>
+        if ('serviceWorker' in navigator && window.location.protocol !== 'file:') {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('./sw.js')
+                    .then(registration => console.log('SW registered'))
+                    .catch(err => console.log('SW registration failed', err));
+            });
+        }
+    </script>
 </body>
 </html>
